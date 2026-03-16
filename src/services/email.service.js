@@ -251,8 +251,8 @@ Bank Ledger Team
   await sendEmail(userEmail, subject, text, html);
 }
 
-module.exports = transporter;
+// module.exports = transporter;
 
 module.exports = {
-    sendingRegistrationEmail,sendingTransactionEmail,sendTransactionFailureEmail
+    transporter,sendingRegistrationEmail,sendingTransactionEmail,sendTransactionFailureEmail
 }

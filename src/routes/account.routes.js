@@ -7,4 +7,15 @@ const router=express.Router()
 // POST  /api/accounts
 router.post('/',authMiddleWare.authMiddleWare,accountController.createAccountController)
 
+
+// GET accounts
+
+router.get('/',authMiddleWare.authMiddleWare,accountController.getUserAccountsController)
+
+
+// GET /api/accounts/balance/:accountId
+
+router.get('/balance/:accountId',authMiddleWare.authMiddleWare,accountController.getAccountBalanceController)
+
+
 module.exports=router

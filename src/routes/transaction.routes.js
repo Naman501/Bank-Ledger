@@ -11,6 +11,6 @@ router.post('/',authMiddleware.authMiddleWare,transactionController.createTransa
 
 // POST /api/transactions/system/intial-funds
 
-router.post('/system/intial-funds',authMiddleware.authSystemUserMiddleware,transactionController.createInitialFundsTransaction)
+router.post('/system/initial-funds',authMiddleware.authSystemUserMiddleware,transactionController.createInitialFundsTransaction)
 
 module.exports=router

@@ -40,13 +40,19 @@ AccountSchema.methods.getBalance= async function(){
         totalDebit:{
           $sum:{
             $cond:
-            [$eq["$type","DEBIT"],
+            [
+             { $eq:["$type","DEBIT"]},
             "$amount"
-            ,0   ]} },
+            ,0   
+          ]
+        }
+       },
          totalCredit:{
           $sum:{
             $cond:
-            [$eq["$type","CREDIT"],
+            [
+             { $eq:["$type","CREDIT"]}
+              ,
             "$amount"
             ,0
             ]}}  }
@@ -62,10 +68,11 @@ $project:{
   ])
 
   if(balanceData.length===0){
+    console.log("length 0 hai")
     return 0;
   }
+  console.log("Balance Data",balanceData)
 
-console.log("balance Data",balanceData)
   return balanceData[0]._balance
 }
 

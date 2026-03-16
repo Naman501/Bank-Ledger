@@ -29,6 +29,8 @@ const LedgerSchema=new mongoose.Schema({
             message:"Type can either be DEBIT or CREDIT."
         }
     }
+},{
+    timestamps:true
 })
 
 function preventLedgerModificaiton(){
